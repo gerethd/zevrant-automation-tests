@@ -42,6 +42,8 @@ dependencies {
             "net.serenity-bdd:serenity-ensure:${serenityCoreVersion}",
             "junit:junit:${junitVersion}",
             "org.assertj:assertj-core:${assertJVersion}"
+    testCompile group: 'com.amazonaws', name: 'aws-java-sdk-secretsmanager', version: '1.11.864'
+    testCompile group: 'com.amazonaws', name: 'aws-java-sdk-core', version: '1.11.864'
 }
 
 test {
