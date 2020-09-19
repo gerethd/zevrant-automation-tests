@@ -2,7 +2,7 @@ package starter.steps.users;
 
 import net.thucydides.core.annotations.Step;
 import starter.pages.HomePage;
-import starter.pages.users.LoginPage;
+import starter.pages.LoginPage;
 
 public class LoginUser {
 
@@ -32,6 +32,16 @@ public class LoginUser {
   @Step
   public String getUsername() {
     return homePage.getUsername();
+  }
+
+  @Step
+  public void clickUserMenu() {
+    homePage.clickUserMenu();
+  }
+
+  @Step
+  public void clickAccountPage(){
+    homePage.clicAccountButton();
   }
 
 }

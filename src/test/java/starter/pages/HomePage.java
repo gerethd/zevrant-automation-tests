@@ -14,6 +14,15 @@ public class HomePage extends PageObject {
   @FindBy(id = "userMenu")
   private WebElementFacade userMenu;
 
+  @FindBy(id = "appsMenu")
+  private WebElementFacade appsMenu;
+
+  @FindBy(id= "D&D")
+  private WebElementFacade dndMenu;
+
+  @FindBy(id = "settings")
+  private WebElementFacade account;
+
   public void clickLogin() {
     loginButton.click();
   }
@@ -22,8 +31,20 @@ public class HomePage extends PageObject {
     return userMenu.getWrappedElement().getText();
   }
 
-  public void getUserMenu() {
+  public void clickUserMenu() {
     userMenu.click();
+  }
+
+  public void clickAppsMenu() {
+    appsMenu.click();
+  }
+
+  public void navigatetoDnD() {
+    dndMenu.click();
+  }
+
+  public void clicAccountButton() {
+    account.click();
   }
 
 }

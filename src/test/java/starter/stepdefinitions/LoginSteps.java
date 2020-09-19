@@ -63,4 +63,13 @@ public class LoginSteps {
             .getProperty("webdriver.base.url");
     webDriver.navigate().to(webserviceEndpoint);
   }
+
+  @Given("I have logged into the application")
+  public void iHaveLoggedIntoTheApplication() {
+    iNavigateToTheApplication();
+    loginUser.clickLogin();
+    loginUser.typeUsername(secretsManager.getSecret("/dev/ui/test/username"));
+    loginUser.typePassword(secretsManager.getSecret("/dev/ui/test/password"));
+    loginUser.clickSubmit();
+  }
 }

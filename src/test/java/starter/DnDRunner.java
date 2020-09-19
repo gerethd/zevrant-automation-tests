@@ -7,10 +7,7 @@ import org.junit.runner.RunWith;
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
         plugin = {"pretty"},
-        features = "src/test/resources/features"
+        features = "src/test/resources/features/D&D"
 )
-public class LoginRunner {
-
-
-
+public class DnDRunner {
 }
