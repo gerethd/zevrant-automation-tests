@@ -72,7 +72,7 @@ public class DnDPage extends PageObject {
     }
 
     public String getCampaignNamed(String test_user_automation) {
-        return testCampaign.getElement().findElement(By.tagName("h3")).getText();
+        return testCampaign.getText();
     }
 
     public void deleteTestCampaign() {

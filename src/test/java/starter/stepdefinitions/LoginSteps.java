@@ -47,7 +47,7 @@ public class LoginSteps {
     loginUser.typePassword(secretsManager.getSecret("/dev/ui/test/password"));
   }
 
-  @And("^I click submit$")
+  @And("^I click submit on the login form$")
   public void iClickSubmit() {
     loginUser.clickSubmit();
   }

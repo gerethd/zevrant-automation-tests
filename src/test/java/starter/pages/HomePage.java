@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends PageObject {
 
-  @FindBy(id = "loginButton")
+  @FindBy(id = "login")
   private WebElementFacade loginButton;
 
   @FindBy(id = "userMenu")
@@ -23,11 +23,15 @@ public class HomePage extends PageObject {
   @FindBy(id = "settings")
   private WebElementFacade account;
 
+  @FindBy(id = "adminPage")
+  private WebElementFacade admin;
+
   public void clickLogin() {
     loginButton.click();
   }
 
   public String getUsername() {
+    super.waitABit(5000);
     return userMenu.getWrappedElement().getText();
   }
 
@@ -47,4 +51,7 @@ public class HomePage extends PageObject {
     account.click();
   }
 
+  public void clickAdminPage() {
+    admin.click();
+  }
 }
