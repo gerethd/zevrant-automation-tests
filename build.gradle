@@ -44,7 +44,9 @@ dependencies {
             "org.assertj:assertj-core:${assertJVersion}",
             'com.amazonaws:aws-java-sdk-secretsmanager:1.11.864',
             'com.amazonaws:aws-java-sdk-core:1.11.864',
-            'net.serenity-bdd:serenity-rest-assured:2.3.6'
+            'net.serenity-bdd:serenity-rest-assured:2.3.6',
+            'org.hamcrest:hamcrest-all:1.3'
+
 
 }
 

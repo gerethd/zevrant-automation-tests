@@ -44,4 +44,9 @@ public class LoginUser {
     homePage.clicAccountButton();
   }
 
+  @Step
+  public void clickRegistrationPage(){
+    loginPage.clickRegistrationButton();
+  }
+
 }

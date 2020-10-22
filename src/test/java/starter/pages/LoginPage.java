@@ -15,6 +15,9 @@ public class LoginPage extends PageObject {
   @FindBy(id = "loginSubmit")
   private WebElementFacade submitButton;
 
+  @FindBy(id = "register")
+  private WebElementFacade register;
+
   public void typeUsername(String username) {
     usernameField.sendKeys(username);
   }
@@ -25,5 +28,9 @@ public class LoginPage extends PageObject {
 
   public void submitLogin() {
     submitButton.click();
+  }
+
+  public void clickRegistrationButton() {
+    register.click();
   }
 }
