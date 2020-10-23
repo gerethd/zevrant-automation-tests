@@ -21,12 +21,13 @@ public class Hooks {
     @Before
     public void setupDnd() {
         RestAssured.useRelaxedHTTPSValidation();
-        RestAssured.given().header(new Header("Authorization", "bearer " + getToken()))
-                .delete(System.getenv("BASE_URL") + "/zevrant-dnd-service/campaigns?campaignName=test user automation")
+        String baseUrl = System.getenv("BASE_URL") != null ? System.getenv("BASE_URL") : "https://develop.zevrant-services.com";
+        RestAssured.given().header(new Header("Authorization", "bearer " + getToken(baseUrl)))
+                .delete(baseUrl+ "/zevrant-dnd-service/campaigns?campaignName=test user automation")
                     .andReturn().getBody().prettyPrint();
     }
 
-    private String getToken() {
+    private String getToken(String baseUrl) {
         String environment = System.getProperty("environment");
         if(environment == null) {
             environment = "local";
@@ -36,13 +37,14 @@ public class Hooks {
         String clientSecret = secretsManager.getSecret("/" + environment + "/dnd/oauth2/password");
 
         RestAssured.useRelaxedHTTPSValidation();
+        System.out.println(System.getenv("BASE_URL") + "/zevrant-oauth2-service/oauth/token");
         String body = RestAssured
                 .given()
                             .multiPart("client_id", clientId)
                             .multiPart("client_secret", clientSecret)
                             .multiPart("grant_type", "client_credentials")
                             .multiPart("scope", "DEFAULT")
-                        .post(System.getenv("BASE_URL") + "/zevrant-oauth2-service/oauth/token")
+                        .post(baseUrl + "/zevrant-oauth2-service/oauth/token")
                 .andReturn().getBody().prettyPrint();
 
 

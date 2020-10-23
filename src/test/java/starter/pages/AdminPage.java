@@ -17,6 +17,7 @@ public class AdminPage extends PageObject {
     private WebElementFacade save;
 
     public void clickDndCheckbox() {
+        waitABit(5000);
         WebElementFacade input = dndCell.find(By.tagName("input"));
         WebElementFacade div = dndCell.find(By.tagName("div"));
         if(input.getAttribute("aria-checked").equals("false")) {
@@ -30,6 +31,7 @@ public class AdminPage extends PageObject {
     }
 
     public void clickDndAdminCheckbox() {
+        waitABit(5000);
         WebElementFacade input = dndAdminCell.find(By.tagName("input"));
         WebElementFacade div = dndAdminCell.find(By.tagName("div"));
         if(input.getAttribute("aria-checked").equals("false")) {
