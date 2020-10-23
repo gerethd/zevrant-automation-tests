@@ -35,9 +35,9 @@ public class Hooks {
             environment = "local";
         }
 
-        System.out.println("/" + environment + "/dnd/oauth2/username");
-
         String clientId = secretsManager.getSecret("/" + environment + "/dnd/oauth2/username");
+        System.out.println(clientId);
+
         String clientSecret = secretsManager.getSecret("/" + environment + "/dnd/oauth2/password");
 
         RestAssured.useRelaxedHTTPSValidation();
